@@ -1,7 +1,7 @@
 import Image from "next/image";
 import prisma from "@/lib/prisma";
 export default async function Home() {
-	console.log("DATABASE_URL: ", process.env.DATABASE_URL);
+
 	 const users = await prisma.user.findMany();
 	 console.log("users: ", users);
   return (

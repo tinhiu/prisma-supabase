@@ -1,4 +1,4 @@
-import { PrismaClient, Prisma } from "../app/generated/prisma/client";
+import { PrismaClient, Prisma } from "./generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import "dotenv/config";
 
@@ -14,6 +14,18 @@ const userData: Prisma.UserCreateInput[] = [
   {
     name: "Alice",
     email: "alice@prisma.io",
+    images: [
+        {
+"height": 300,
+"url": "https://i.scdn.co/image/ab6775700000ee85e89b9da6c8ff8000cfc2d610",
+"width": 300
+},
+{
+"height": 64,
+"url": "https://i.scdn.co/image/ab6775700000ee85e89b9da6c8ff8000cfc2d610",
+"width": 64
+}
+      ],
     posts: {
       create: [
         {
@@ -31,6 +43,7 @@ const userData: Prisma.UserCreateInput[] = [
   {
     name: "Bob",
     email: "bob@prisma.io",
+    
     posts: {
       create: [
         {
